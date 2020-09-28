@@ -1,0 +1,55 @@
+.car-rating-star{
+    color: lightsteelblue;
+}
+
+.car-card-container{
+    margin: 0px;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+}
+
+.car-card{
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 4px 0 rgba(35,31,32,0.2), 0 0 1px 0 rgba(35,31,32,0.1); */
+    color: #231F20;
+    flex: 1 0 auto;
+    margin: 0 7.5px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+
+.car-card-image{
+    height: 275px;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+
+.car-card-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.car-card-title{
+    margin: 0px;
+    color: rgb(18, 18, 20);
+    font-family: RlBasisGrotesque,  Avenir,  Helvetica Neue,  Helvetica,  sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -0.2px;
+    line-height: 28px;
+    text-transform: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.car-card-stats{
+    align-items: center;
+    display: flex;
+}

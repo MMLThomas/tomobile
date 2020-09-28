@@ -1,0 +1,28 @@
+
+.car-slider-container{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    margin: 25px 20px;
+    padding: 0px 50px;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.car-slider{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+
+
+.car-cards{
+    display: flex;
+    flex-direction: row;
+   
+}
+

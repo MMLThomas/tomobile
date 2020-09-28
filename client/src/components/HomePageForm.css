@@ -1,0 +1,38 @@
+img{
+    object-fit: cover;
+    height: 600px;
+    width: 100%;
+    z-index: -1;
+}
+
+.homepage-form-container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    object-fit: contain;
+}
+
+
+.homepage-form-heading{
+    position: absolute;
+    margin-top: 75px;
+    color: #121214;
+    font-size: 90px;
+    font-weight: 900;
+    line-height: 90px;
+}
+
+.homepage-form-heading-subtext{
+    position: absolute;
+    margin-top: 190px;
+    font-size: 21px;
+    font-weight: 900;
+    color: #121214;
+}
+
+.long-booking-details-form{
+    position: absolute;
+    margin-top: 250px;
+}
