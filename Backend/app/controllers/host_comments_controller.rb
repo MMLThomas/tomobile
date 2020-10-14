@@ -1,0 +1,2 @@
+class HostCommentsController < ApplicationController
+end

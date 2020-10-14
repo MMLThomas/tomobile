@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_id: MyString
+  host_id: MyString
+  name: MyString
+  year: 1
+  rating: 1.5
+  color: MyString
+  make: MyString
+  model: MyString
+  image: MyString
+  description: MyString
+  trips: MyString
+  features: MyString
+
+two:
+  category_id: MyString
+  host_id: MyString
+  name: MyString
+  year: 1
+  rating: 1.5
+  color: MyString
+  make: MyString
+  model: MyString
+  image: MyString
+  description: MyString
+  trips: MyString
+  features: MyString

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lng: 1.5
+  lat: 1.5
+  car_location: one
+  host_location: one
+
+two:
+  lng: 1.5
+  lat: 1.5
+  car_location: two
+  host_location: two

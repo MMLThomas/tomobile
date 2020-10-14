@@ -1,0 +1,2 @@
+class FavoriteCarsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class CarFeaturesController < ApplicationController
+end

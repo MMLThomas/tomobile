@@ -29,9 +29,10 @@
 
 .feature-container{
     height: auto;
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     align-content: center;
     margin: auto;
@@ -48,7 +49,7 @@
     margin: 40px 0px 0px;
     padding: 0px 10px;
     display: initial;
-    flex-basis: 33.333333%;
+    width: 300px;
 }
 
 .feature-content{
@@ -62,4 +63,27 @@
     font-weight: 900;
     line-height: 28px;
     color: #121214;
+}
+
+@media screen and (max-width: 884px){
+    .feature-container{
+        flex-direction: column;
+    }
+
+    .feature{
+        width: 500px;
+    }
+    
+}
+
+@media screen and (max-width: 525px){
+    .feature-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .feature{
+        flex-basis: 80%;
+    }
+
 }

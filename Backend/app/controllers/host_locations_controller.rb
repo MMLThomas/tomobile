@@ -1,0 +1,2 @@
+class HostLocationsController < ApplicationController
+end

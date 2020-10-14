@@ -1,5 +1,5 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import '../../App.css'
 import './Home.css'
 import {homepageText} from './HomeText'
@@ -7,10 +7,21 @@ import HomePageForm from '../HomePageForm'
 import FeaturesOne from '../FeaturesOne'
 import CategoriesSlider from '../categories_slider_components/CategoriesSlider'
 import CarSuggestionSlider from '../CarSuggestionSlider';
+import FeaturesTwo from '../FeaturesTwo';
+import ListYourCarButton from '../ListYourCarButton';
+import { useEffect } from 'react';
+import { fetchBookings } from '../../actions';
+
  
 function Home () {
   let language = useSelector(state => state.language.language)
+  const dispatch = useDispatch()
 
+
+  useEffect(() => {
+    dispatch(fetchBookings());
+   }, [])
+  
   
     return (
       <div >
@@ -21,7 +32,8 @@ function Home () {
             <h2 className='our-suggestions-heading'>{homepageText[language]["ourSuggestionsHeading"]}</h2>
             <CarSuggestionSlider />
           </div>
-          <FeaturesOne/>
+          <FeaturesTwo/>
+          <ListYourCarButton className="home-list-car-button"/>
       </div>
 
     )

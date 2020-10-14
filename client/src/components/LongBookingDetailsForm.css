@@ -108,3 +108,11 @@
     outline: none;
     background: none;
 }
+
+@media screen and (max-width: 1000px){
+    .long-booking-form{
+        width: 700px;
+    }
+
+
+}

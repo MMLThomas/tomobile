@@ -1,8 +1,8 @@
 
 export const homepageFormText = {
     ["english"]: {
-        ["heading"]: "Much more than a rental car",
-        ["subheading"]: "Book unforgettable cars from trusted hosts around Morocco"
+        ["heading"]: "Your dream ride is a click away",
+        ["subheading"]: "Backed by the power of trusted hosts all around Morocco"
     },
     ["arabic"]: {
         ["heading"]: "أكثر بكثير من مجرد سيارة مستأجرة",

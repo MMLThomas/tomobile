@@ -2,7 +2,7 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 import './HomePageForm.css'
 import '../App.css'
-import formImage from '../images/homepage-form-image-15.png'
+import formImage from './images/homepage-form-image-15.png'
 import LongBookingDetailsForm from './LongBookingDetailsForm'
 import {homepageFormText} from './HomePageFormText'
 

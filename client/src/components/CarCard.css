@@ -1,5 +1,6 @@
 .car-rating-star{
-    color: lightsteelblue;
+    color: lightskyblue;
+    margin-right: 5px;
 }
 
 .car-card-container{
@@ -29,6 +30,16 @@
     border-radius: 5px;
 }
 
+.price-tag{
+    font-size: 26px;
+    font-weight: 900;
+    position: absolute;
+    color: whitesmoke;
+    bottom: 20%;
+    right: 10%;
+
+}
+
 
 .car-card-info{
     display: flex;
@@ -47,6 +58,10 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.car-card-image-container{
+    object-fit: contain;
 }
 
 .car-card-stats{

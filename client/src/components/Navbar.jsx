@@ -3,7 +3,9 @@ import {useSelector} from 'react-redux'
 import { NavLink } from 'react-router-dom';
 import {AiOutlineCar} from 'react-icons/ai'
 import {FaBars, FaTimes} from 'react-icons/fa'
+import {useAuth0} from '@auth0/auth0-react' 
 import './Navbar.css'
+import AuthNav from "./AuthNav";
 import {navBarText} from './NavBarText'
 
 function Navbar() {
@@ -13,8 +15,9 @@ function Navbar() {
 
   let language = useSelector(state => state.language.language)
 
-  
 
+  const auth = useAuth0()
+  
 
   return (
     <>
@@ -28,24 +31,15 @@ function Navbar() {
             {click ? <FaTimes className='fa-times'/> : <FaBars className='fa-bars'/> }
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className="nav-item">
-              <NavLink to='/learn-more' className="nav-links">
-              {navBarText[language]["learn more"]}
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to='/login' className="nav-links">
-                {navBarText[language]["login"]}
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to='/signup' className="nav-links">
-              {navBarText[language]["signup"]}
-              </NavLink>
+            <li>
+              <div >
+                <AuthNav />
+              </div>
             </li>
           </ul>
         </div>
       </div>
+      {console.log(auth)}
     </>
   )
 }

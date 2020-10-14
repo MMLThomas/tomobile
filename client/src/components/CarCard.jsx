@@ -1,28 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './CarCard.css'
+import {useDispatch} from 'react-redux'
+import {selectCar} from '../actions/index'
 import { BsFillStarFill} from 'react-icons/bs'
-// import { NavLink } from 'react-router-dom'
 
-export class CarCard extends Component {
-    render(props) {
+function CarCard (props) {
+    const dispatch = useDispatch();
         return (
             <>
-            <div className="car-card-container">
-                {/* <NavLink link> */}
-                    <div className="car-card">
+            <div className="car-card-container" onClick={() => dispatch(selectCar(props.car))}>
+                    <div className="car-card" >
                         <div className="car-card-image-container">
-                            <img src={this.props.car.image} className="car-card-image"/>
+                            <img src={props.car.images ? props.car.images[0].src : props.car.profile_pic} alt="car" className="car-card-image"/>
+                            <div className="price-tag">${props.car.price}/ Day</div>
                         </div>
                         <div className="car-card-info">
-                            <div className="car-card-title">{this.props.car.make} {this.props.car.model} {this.props.car.year}</div>
-                            <div className="car-car-stats"><strong>{this.props.car.rating}</strong> <BsFillStarFill className="car-rating-star"/> ({this.props.car.trips} trips) </div>
+                            <div className="car-card-title">{props.car.make} {props.car.model} {props.car.year}</div>
+                            <div className="car-card-stats"><strong>{props.car.average_rating}</strong> <BsFillStarFill className="car-rating-star"/> ({props.car.trips_total} trips) </div>
                         </div>
                     </div>  
-                {/* </NavLink> */}
             </div>
             </>
         )
-    }
 }
 
 export default CarCard

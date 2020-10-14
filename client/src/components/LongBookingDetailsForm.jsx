@@ -1,42 +1,41 @@
 import React, {useState} from 'react'
-import {useSelector, useDispatch} from 'react-redux'
-import {updateBookingInfo} from '../actions/index'
+import {useDispatch, useSelector} from 'react-redux'
+import {updateBookingInfo, sortCarsByDistance} from '../actions/index'
 import './LongBookingDetailsForm.sass'
 import './LongBookingDetailsForm.css'
 import DatePicker from 'react-datepicker'
 import {AiOutlineCar} from 'react-icons/ai'
 import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-autocomplete";
+import { NavLink } from 'react-router-dom'
 
 
 
 
 function LongBookingDetailsForm() {
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date(1601500000000));
-    const [bookingLocation, setbookingLocation] = useState('');
+    const booking = useSelector(state => state.booking.booking)
+    const [startDate, setStartDate] = useState(booking.startDate);
+    const [endDate, setEndDate] = useState(booking.endDate);
+    const [bookingLocation, setbookingLocation] = useState(booking.location);
     const [coordinates, setCoordinates] = useState({
         lat: null,
         lng: null
       });
     const dispatch = useDispatch();
-    const booking = useSelector(state => state)
     
-    
-    const currentBooking = {  
-        startDate: startDate,
-        endDate: endDate,
-        location: bookingLocation,
-        coordinates: coordinates 
-    }
     
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleClick = (event) => {
+        const currentBooking = {  
+            startDate: startDate,
+            endDate: endDate,
+            location: bookingLocation,
+            coordinates: coordinates 
+        }
         dispatch(updateBookingInfo(currentBooking));
-        console.log(currentBooking);
-        console.log(booking);
+        dispatch(sortCarsByDistance(coordinates));
         // go to search page with variables startDate, endDate, bookingLocation
     }
+
 
     const handleSelect = async(value) => {
         const results = await geocodeByAddress(value);
@@ -51,13 +50,13 @@ function LongBookingDetailsForm() {
         <>
             <div className="long-booking-form-container">
                 <div className="long-booking-form">
-                    <form className="long-booking-form-inputs"  onSubmit={handleSubmit}>
+                    <form className="long-booking-form-inputs">
                         <PlacesAutocomplete
                             value={bookingLocation}
                             onChange={setbookingLocation}
                             onSelect={handleSelect}
                         >
-                        {({ getInputProps, suggestions, getSuggestionItemProps }) => {
+                            {({ getInputProps, suggestions, getSuggestionItemProps }) => {
                                 return (
                                     <div className="location-input">
                                         Where to
@@ -80,10 +79,6 @@ function LongBookingDetailsForm() {
                                     </div>
                                 )
                             }}
-                            {/* <div className="location-input">
-                                Where to
-                            <input type="text" className="location-input-text" placeholder="City, Airport, Hotel" value={bookingLocation}/>
-                            </div> */}
                         </PlacesAutocomplete>
                         <div  >
                             <p className="booking-date-input-text-start">From</p>
@@ -110,7 +105,9 @@ function LongBookingDetailsForm() {
                                 name="end-date"
                         />   
                         </div>
-                        <button type='submit' className='invisable-button'><AiOutlineCar className="form-submit-icon"/></button>
+                        <NavLink to="/search" >
+                            <button type='submit' onClick={handleClick} className='invisable-button'><AiOutlineCar className="form-submit-icon"/></button>
+                        </NavLink>
                     </form>
                 </div>
             </div>

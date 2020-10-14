@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  renter_id: MyString
+  host_id: MyString
+  content: MyText
+  date: 2020-09-17
+
+two:
+  renter_id: MyString
+  host_id: MyString
+  content: MyText
+  date: 2020-09-17

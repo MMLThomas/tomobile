@@ -1,0 +1,2 @@
+class HostRatingsController < ApplicationController
+end

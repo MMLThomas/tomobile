@@ -11,9 +11,9 @@ export const featureOneText = {
     },
     ["english"]: {
         ["main heading one"]: "Hit the road confidently",
-        ["main heading two"]: "Safe car sharing while navigating COVID-19",
+        ["main heading two"]: "Zero deposits and 100% covered",
         ["first heading"]: "Clean & disinfected cars",
-        ["second heading"]: "Contactless check-in options",
+        ["second heading"]: "24-hour roadside assistance",
         ["third heading"]: "Flexible cancellations",
         ["first content"]: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         ["second content"]: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",

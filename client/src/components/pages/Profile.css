@@ -1,0 +1,29 @@
+.profile-page{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 50px 0px;
+    padding-left: 40%;
+    margin: 0;
+}
+
+.your-bookings-heading{
+    margin: 20px;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.your-booking-cards-holder{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-basis: 65%;
+    max-width: 65%;
+}
+
+.your-booking-card{
+    flex-basis: 80%;
+    max-width: 80%;
+    margin: 50px;
+}

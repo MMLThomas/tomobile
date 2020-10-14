@@ -1,0 +1,2 @@
+class HostContactsController < ApplicationController
+end
