@@ -20,9 +20,7 @@ const App = () => {
   const dispatch = useDispatch()
   const { isLoading } = useAuth0();
 
- useEffect(() => {
-  dispatch(fetchCars());
- }, [])
+ 
 
 
 

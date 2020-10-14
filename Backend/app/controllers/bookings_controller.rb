@@ -11,11 +11,10 @@ class BookingsController < ApplicationController
 
     def create
         booking = Booking.create(booking_params)
-        params.booking.booked_dates.each{|date| booking.booked_dates.create(date: date)}
         render json: BookingSerializer.new(booking)
     end 
 
-    def delete 
+    def destroy
         booking = Booking.find_by(id: params[:id])
         booking.destroy
     end

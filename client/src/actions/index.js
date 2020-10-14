@@ -89,7 +89,9 @@ export function fetchBookings() {
       dispatch({ type: 'START_ADDING_EXISTING_BOOKINGS_REQUEST' });
       fetch('http://localhost:3001/bookings')
         .then(response => response.json())
-        .then(bookings => dispatch({ type: 'ADD_EXISISTING_BOOKINGS', bookings }));
+        .then(bookings => {   
+           dispatch({ type: 'ADD_EXISISTING_BOOKINGS', bookings })
+        });
     };
 };
 

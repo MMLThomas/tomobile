@@ -3,9 +3,7 @@ import SearchPageMap from '../SearchPageMap'
 import './Search.css'
 import '../../App.css'
 import { useSelector, useDispatch} from 'react-redux'
-import { NavLink } from 'react-router-dom'
-import CarCard from '../CarCard'
-import { sortCarsByPrice, sortCarsByMPG, sortCarsByRating } from '../../actions'
+import { sortCarsByPrice, sortCarsByMPG, sortCarsByRating} from '../../actions'
 import CarCardsContainer from '../CarCardsContainer'
        
 const Search = () => {
@@ -14,6 +12,8 @@ const Search = () => {
     const [loading, setloading] = useState(cars.requesting)
     const [filter, setfilter] = useState('')
     const dispatch = useDispatch()
+    const [carSearchMake, setcarSearchMake] = useState('')
+    
 
 
     const handlePriceClick = () => {
@@ -28,6 +28,8 @@ const Search = () => {
         dispatch(sortCarsByRating());
         setfilter('rating')
     }
+    
+
 
     
     return (

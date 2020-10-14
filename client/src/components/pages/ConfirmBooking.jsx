@@ -5,13 +5,15 @@ import './ConfirmBooking.css'
 import './Car.css'
 import '../../App.css'
 import {getBookingDays, getBookingDates} from '../ManageBookingDays'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { fetchBookings } from '../../actions';
+import { ThemeConsumer } from 'styled-components';
 
 const ConfirmBooking = () => {
     const car = useSelector(state => state.car.car)
     const booking = useSelector(state => state.booking.booking)
     const dispatch = useDispatch()
+    const history = useHistory()
     
     const { user } = useAuth0();
     const { name, picture, email } = user;
@@ -33,7 +35,6 @@ const ConfirmBooking = () => {
             booked_dates: dates, 
             host_id: car.host.id
         };
-           
         fetch('http://localhost:3001/bookings', {
             method: 'POST',
             headers: {
@@ -43,8 +44,11 @@ const ConfirmBooking = () => {
             body: JSON.stringify({
                 booking: finalBooking
             })
-            });
-            dispatch(fetchBookings());
+        })
+        .then(resp => {
+            dispatch(fetchBookings())
+        })
+        .then(() => history.push('/'))
     }
 
     
@@ -52,17 +56,17 @@ const ConfirmBooking = () => {
     return (
             <div className="confirm-booking">
                 <div className="booking-confirmation-form-container">
-                    <div className="booking-dates-confirmation">
+                    <div className="booking-dates-confirmation booking-item">
                     Duration: {booking.startDate.toDateString()}-{booking.endDate.toDateString()}
                     </div>
-                    <div className="booking-pickup-location-confirmation">
+                    <div className="booking-pickup-location-confirmation booking-item">
                         Pickup location: {car.car_locations[0].name}
                     </div>
-                    <div className="booking-price-confirmation">
+                    <div className="booking-price-confirmation booking-item">
                         Total Cost: ${totalCost}
                     </div>
+                    <button style={{ textDecoration: 'none' }} onClick={handleSubmitClick} className="submit-booking booking-item"><div >  Finalize Booking</div></button>
                 </div>
-                <NavLink to='/' className="submit-booking" onClick={handleSubmitClick}> Finalize Booking</NavLink>
             </div>
     )
 }

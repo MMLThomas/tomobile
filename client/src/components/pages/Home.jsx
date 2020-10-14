@@ -10,16 +10,16 @@ import CarSuggestionSlider from '../CarSuggestionSlider';
 import FeaturesTwo from '../FeaturesTwo';
 import ListYourCarButton from '../ListYourCarButton';
 import { useEffect } from 'react';
-import { fetchBookings } from '../../actions';
+import { fetchBookings, fetchCars } from '../../actions';
 
  
 function Home () {
   let language = useSelector(state => state.language.language)
   const dispatch = useDispatch()
 
-
   useEffect(() => {
     dispatch(fetchBookings());
+    dispatch(fetchCars());
    }, [])
   
   

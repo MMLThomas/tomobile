@@ -1,6 +1,5 @@
 import React from "react";
 import './Profile.css'
-
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSelector, useDispatch } from "react-redux";
 import CarCard from "../CarCard";
@@ -15,7 +14,7 @@ const Profile = () => {
   const userBookings = existingBookings.map(booking => booking.attributes.renter_email === email ? booking : null)
 
   const deleteBooking = (booking) => {
-    fetch('http://localhost:3001/bookings', {
+    fetch(`http://localhost:3001/bookings/${booking.id}`, {
               method: 'DELETE',
               headers: {
                   'Accept': 'application/json',
