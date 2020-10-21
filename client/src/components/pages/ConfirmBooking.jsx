@@ -8,6 +8,7 @@ import {getBookingDays, getBookingDates} from '../ManageBookingDays'
 import { NavLink, useHistory } from 'react-router-dom';
 import { fetchBookings } from '../../actions';
 import { ThemeConsumer } from 'styled-components';
+import CarCard from 'components/CarCard';
 
 const ConfirmBooking = () => {
     const car = useSelector(state => state.car.car)
@@ -48,16 +49,21 @@ const ConfirmBooking = () => {
         .then(resp => {
             dispatch(fetchBookings())
         })
-        .then(() => history.push('/'))
+        .then(() => history.push('/profile'))
     }
 
     
 
     return (
+        <div className="cb-page">
             <div className="confirm-booking">
+                <h1 className="confirm-booking-heading"> Your Selection</h1>
+                <div className="confirm-car-card">
+                    <CarCard car={car} />
+                </div>
                 <div className="booking-confirmation-form-container">
                     <div className="booking-dates-confirmation booking-item">
-                    Duration: {booking.startDate.toDateString()}-{booking.endDate.toDateString()}
+                    Duration: {booking.startDate.toDateString()} - {booking.endDate.toDateString()}
                     </div>
                     <div className="booking-pickup-location-confirmation booking-item">
                         Pickup location: {car.car_locations[0].name}
@@ -68,6 +74,7 @@ const ConfirmBooking = () => {
                     <button style={{ textDecoration: 'none' }} onClick={handleSubmitClick} className="submit-booking booking-item"><div >  Finalize Booking</div></button>
                 </div>
             </div>
+        </div>
     )
 }
 

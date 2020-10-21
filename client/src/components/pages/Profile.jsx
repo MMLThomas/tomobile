@@ -48,9 +48,10 @@ const Profile = () => {
       </div>
       <div className="your-booking-cards-holder">
         {userBookings.map(booking => <div className='your-booking-card'><CarCard car={booking.attributes.car}/> 
-        <div className="your-booking-start-end">From {booking.attributes.start_time}  Until  {booking.attributes.end_time}</div>
-          <div className="your-booking-price">{booking.attributes.cost}</div>
-          <button onClick={() => deleteBooking(booking)}>Delete Booking</button></div> )}
+        <div className="your-booking-details">
+          <div className="your-booking-start-end"> {booking.attributes.start_time}  -  {booking.attributes.end_time}</div>
+            <div className="your-booking-price">Total ${booking.attributes.cost}</div>
+            <button className="delete-booking-button" onClick={() => deleteBooking(booking)} >Delete Booking</button></div></div> )}
       </div>
     </div>
   );

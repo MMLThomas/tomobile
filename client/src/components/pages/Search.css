@@ -16,8 +16,8 @@
     .filter-buttons-container{
         display: block;
         margin-top: 15px;
-        width: 100%;
-        max-width: 100%;
+        width: 50%;
+        max-width: 50%;
         height: auto;
     }
 
@@ -32,6 +32,15 @@
         color: black;
         font-weight: 700;
         cursor: pointer;
+    }
+
+    .alter-booking-container{
+        position: relative;
+        left: 50%;
+        width: 50%;
+        max-width: 50%;
+        border: 1px solid black;
+        
     }
 
     .search-page-label{

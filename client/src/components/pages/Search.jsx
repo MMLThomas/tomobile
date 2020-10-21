@@ -5,6 +5,7 @@ import '../../App.css'
 import { useSelector, useDispatch} from 'react-redux'
 import { sortCarsByPrice, sortCarsByMPG, sortCarsByRating} from '../../actions'
 import CarCardsContainer from '../CarCardsContainer'
+import SearchPageBookingForm from 'components/SearchPageBookingForm'
        
 const Search = () => {
     const cars = useSelector(state => state.cars.cars)
@@ -30,7 +31,6 @@ const Search = () => {
     }
     
 
-
     
     return (
         <div>
@@ -41,6 +41,7 @@ const Search = () => {
                     <button className="search-page-button" onClick={() => handleMPGClick()}> MPG</button>
                     <button className="search-page-button" onClick={() => handleRatingClick()}> Rating</button>
                 </div>
+                    <SearchPageBookingForm />
             </div>
             <div className="searchpage-map-cards-container">
                 <CarCardsContainer cars={cars} />

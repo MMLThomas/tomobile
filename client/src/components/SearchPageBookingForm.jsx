@@ -1,19 +1,18 @@
 import React, {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {updateBookingInfo, sortCarsByDistance} from '../actions/index'
+import {updateBookingInfo, sortCarsByDistance, fetchCars} from '../actions/index'
 import './LongBookingDetailsForm.sass'
 import './LongBookingDetailsForm.css'
+import './SearchPageBookingForm.css'
 import DatePicker from 'react-datepicker'
 import {AiOutlineCar} from 'react-icons/ai'
 import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-autocomplete";
 import { NavLink } from 'react-router-dom'
-import {longBookingFormText} from './LongBookingFormText'
 
 
 
 
-function LongBookingDetailsForm() {
-    const language = useSelector(state => state.language.language)
+function SearchPageBookingForm() {
     const booking = useSelector(state => state.booking.booking)
     const [startDate, setStartDate] = useState(booking.startDate);
     const [endDate, setEndDate] = useState(booking.endDate);
@@ -33,9 +32,9 @@ function LongBookingDetailsForm() {
             location: bookingLocation,
             coordinates: coordinates 
         }
+        dispatch(fetchCars)
         dispatch(updateBookingInfo(currentBooking));
         dispatch(sortCarsByDistance(coordinates));
-        // go to search page with variables startDate, endDate, bookingLocation
     }
 
 
@@ -50,9 +49,9 @@ function LongBookingDetailsForm() {
 
     return (
         <>
-            <div className="long-booking-form-container">
-                <div className="long-booking-form">
-                    <form className="long-booking-form-inputs">
+            <div className="search-page-booking-form-container">
+                <div className="search-page-booking-form">
+                    <form className="search-page-booking-form-inputs">
                         <PlacesAutocomplete
                             value={bookingLocation}
                             onChange={setbookingLocation}
@@ -60,9 +59,9 @@ function LongBookingDetailsForm() {
                         >
                             {({ getInputProps, suggestions, getSuggestionItemProps }) => {
                                 return (
-                                    <div className="location-input">
-                                        {longBookingFormText[language]['Where to']}
-                                        <input {...getInputProps({ placeholder: longBookingFormText[language]["Location"] })} className="location-input-text" />
+                                    <div className="search-page-location-input">
+                                        Where to
+                                        <input {...getInputProps({ placeholder: "City, Airport, Hotel" })} className="location-input-text" />
 
                                         <div>
 
@@ -83,7 +82,7 @@ function LongBookingDetailsForm() {
                             }}
                         </PlacesAutocomplete>
                         <div  >
-                            <p className="booking-date-input-text-start">{longBookingFormText[language]['From']}</p>
+                            <p className="booking-date-input-text-start">From</p>
                             <DatePicker
                                 selected={startDate}
                                 onChange={date => setStartDate(date)}
@@ -95,7 +94,7 @@ function LongBookingDetailsForm() {
                             />
                         </div>
                         <div >
-                            <p className="booking-date-input-text-end"> {longBookingFormText[language]['Until']}</p>
+                            <p className="booking-date-input-text-end"> Until</p>
                             <DatePicker
                                 selected={endDate}
                                 onChange={date => setEndDate(date)}
@@ -118,4 +117,4 @@ function LongBookingDetailsForm() {
     )
 }
 
-export default LongBookingDetailsForm
+export default SearchPageBookingForm

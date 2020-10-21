@@ -1,9 +1,30 @@
+
+.cb-page{
+    background-color: darkgray;
+    height: 87vh;
+    bottom: 0%;
+}
+
+.confirm-booking-heading{
+    text-align: center;
+}
+
 .confirm-booking{
     display: flex;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-    height: 80vh;
+    margin: auto;
+    width: 50%;
+    max-width: 50%;
+    height: 100%;
+    flex-direction: column;
+    background-color: white;
+    z-index: 3;
+}
+
+.confirm-car-card{
+    position: relative;
+    width: 60%;
+    margin: auto;
+    top: 5%;
 }
 
 .booking-confirmation-form-container{
@@ -11,8 +32,8 @@
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
-    height: 20%;
-    width: 20%;
+    height: 30%;
+    width: 40%;
     border: 1px solid black;
     flex-direction: column;
 }
@@ -21,6 +42,10 @@
     text-align: center;
     margin: 8px;
     margin-top: 20px;
+}
+
+.submit-booking:hover{
+    background-color:rgb(196, 194, 194);
 }
 
 .booking-item{

@@ -1,0 +1,117 @@
+.form-submit-icon{
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    height: 40px;
+    width: 40px;
+    color: lightskyblue;
+    cursor: pointer;
+}
+
+.search-page-booking-form-container{
+    position: relative;
+    top: 0%;
+    margin-top: -45px;
+    left: 45%;
+    width: 55%;
+    max-width: 55%;
+}
+
+.search-page-booking-form{
+    padding-left: 0;
+    padding-right: 0;
+    width: 940px;
+    left: 50%;
+}
+
+.search-page-booking-form-inputs{
+    border-radius: 100px;
+    height: 56px;
+    flex-direction: row;
+    max-width: initial;
+    display: flex;
+    background: #FFFFFF;
+    flex: 0 1 auto;
+    margin: 0 auto;
+    padding: 8px;
+}
+
+.search-page-location-input{
+    width: 30%;
+    appearance: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: none;
+    line-height: 1.5;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.location-input-text{
+    width: 100%;
+    appearance: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: none;
+    line-height: 1.5;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.booking-date-input-text-start{
+    margin: 0px 60px 0px 60px;
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+.booking-date-input-text-end{
+    margin: 0px 60px 0px 30px;
+    font-size: 13px;
+    padding-left: 0px;
+}
+
+.date-picker-start{
+    appearance: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    line-height: 1.5;
+    font-size: 16px;
+    padding-left: 20px;
+    padding-right: 40px;
+    margin: 0px 30px 0px 60px;
+    border-left: 1px solid gray;
+}
+
+.date-picker-end{
+    appearance: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: none;
+    line-height: 1.5;
+    font-size: 16px;
+    padding-left: 20px;
+    margin: 0px 60px 0px 10px;
+    border-left: 1px solid gray;
+}
+
+.invisable-button{
+    appearance: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: none;
+}
+
+@media screen and (max-width: 1000px){
+    .search-page-booking-form{
+        width: 700px;
+    }
+
+
+}
